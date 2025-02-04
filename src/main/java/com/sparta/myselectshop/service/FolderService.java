@@ -4,7 +4,6 @@ import com.sparta.myselectshop.dto.FolderResponseDto;
 import com.sparta.myselectshop.entity.Folder;
 import com.sparta.myselectshop.entity.User;
 import com.sparta.myselectshop.repository.FolderRepository;
-import com.sparta.myselectshop.security.UserDetailsImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -43,7 +42,7 @@ public class FolderService {
             responseDtoList.add(new FolderResponseDto(folder));
         }
 
-        return null;
+        return responseDtoList;
     }
 
     private boolean isExistFolderName(String folderName, List<Folder> existFolderList) {
